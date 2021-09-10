@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package gsvc;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+option csharp_namespace = "Purple.Service.Grpc";
+
+message PersonnelGto{
+	string id = 1;
+	string name = 2;
+	string surname =3;
+}

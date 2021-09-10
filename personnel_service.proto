@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package gsvc;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "personnel_rere.proto";
+
+option csharp_namespace = "Purple.Service.Grpc";
+
+service PersonnelGrpcService{
+	rpc SavePersonnel (PersonnelRequest) returns (PersonnelResponse);
+}
