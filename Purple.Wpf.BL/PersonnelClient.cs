@@ -11,7 +11,7 @@ namespace Purple.Wpf.BL
 
         public PersonnelClient()
         {
-            _client = new(GrpcChannel.ForAddress("http://localhost:44342"));
+            _client = new(GrpcChannel.ForAddress("https://localhost:44345"));
         }
 
         public async Task<PersonnelResponse> SavePersonnel(PersonnelRequest request)

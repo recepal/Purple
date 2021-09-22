@@ -29,5 +29,11 @@ namespace Purple.Service.Controllers
             return result;
 
         }
+
+        [HttpGet("getThinks")]
+        public IActionResult GetThinks()
+        {
+            return Ok("tamam");
+        }
     }
 }

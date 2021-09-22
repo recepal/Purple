@@ -21,9 +21,9 @@ namespace Purple.DAL
             _cnnStr = cnnStr;
         }
 
-        public AppContext(DbContextOptions<AppContext> options) : base(options) // DbContext options alıyor, çok fazla instancelı çalışldığından
+        public AppContext(DbContextOptions<AppContext> options) : base(options) 
         {
-
+            // DbContext options alıyor, çok fazla instancelı çalışldığından
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
