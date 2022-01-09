@@ -1,26 +1,31 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Purple.Model.Personnel;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Purple.DAL
 {
-    public class PersonnelDbRepo
+    public class MasterDbRepo
     {
         private readonly AppContext _ctx;
 
-        public PersonnelDbRepo()
+        public MasterDbRepo()
         {
             _ctx = new AppContext();
         }
 
-        public async Task<bool> Insert(Personnel personnel)
+        public bool CreateDb()
         {
-            _ctx.Personnels.Add(personnel);
-            return await _ctx.SaveChangesAsync() > 0;
+            bool result;
+            try
+            {
+                _ctx.Database.Migrate();
+                result = true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return result;
         }
     }
 }
